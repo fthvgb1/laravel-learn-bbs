@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@root')->name('home');
 
-Route::resource('users', 'UsersController', ['only' => ['update', 'show', 'edit']]);
+Route::resource('users', 'UsersController', ['only' => ['update', 'show', 'edit']])
+    ->middleware('auth');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

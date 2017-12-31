@@ -31,7 +31,7 @@ class UserUpdate extends FormRequest
             ],
             'email' => ['required', 'unique:users,email,' . Auth::id()],
             'introduction' => 'nullable|max:255',
-            'avatar' => 'image|nullable',
+            'avatar' => 'image|nullable|dimensions:min_width=200,min_height=200',
         ];
     }
 
@@ -40,6 +40,7 @@ class UserUpdate extends FormRequest
     {
         return [
             'introduction' => '简介',
+            'avatar' => '头像'
         ];
     }
 }
