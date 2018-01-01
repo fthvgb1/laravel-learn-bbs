@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Category extends BaseModel
+class Category extends Model
 {
     protected $guarded = ['id'];
 
