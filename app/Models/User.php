@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return asset($this->avatar);
     }
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
