@@ -32,6 +32,11 @@ class User extends Authenticatable
         return asset($this->avatar);
     }
 
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
     public function topics()
     {
         return $this->hasMany(Topic::class);
