@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
-
 Route::get('/', 'PagesController@root')->name('home');
 
 Route::resource('users', 'UsersController', ['only' => ['update', 'show', 'edit']])
