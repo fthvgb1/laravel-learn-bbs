@@ -11,7 +11,9 @@ class TopicRequest extends Request
             case 'POST':
                 {
                     return [
-                        // CREATE ROLES
+                        'title' => 'required|max:50',
+                        'category_id' => 'required|integer',
+                        'body' => 'required|min:3'
                     ];
                 }
             // UPDATE
@@ -29,6 +31,15 @@ class TopicRequest extends Request
                     return [];
                 };
         }
+    }
+
+    public function attributes()
+    {
+        return [
+            'title' => '标题',
+            'category_id' => '类别',
+            'body' => '内容'
+        ];
     }
 
     public function messages()
