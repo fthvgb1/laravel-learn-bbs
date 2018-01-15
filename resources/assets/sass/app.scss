@@ -94,16 +94,19 @@ body {
   .pagination {
     margin: 12px 0;
   }
+  .meta {
+    font-size: .9em;
+    color: #b3b3b3;
+  }
+  .reply-content {
+    margin: 6px 0;
+  }
 
   .list-group {
     .list-group-item {
       border: none;
       margin-bottom: 0px;
       border-bottom: 1px solid #efefef;
-
-      .meta {
-        color: #b3b3b3;
-      }
     }
   }
 
@@ -154,3 +157,21 @@ body {
     }
   }
 }
+
+.topic-reply {
+  hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .meta {
+    font-size: .9em;
+    color: #b3b3b3;
+  }
+}
+
+/* Topic Index Page */
