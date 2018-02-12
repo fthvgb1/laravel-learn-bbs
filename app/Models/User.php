@@ -37,6 +37,14 @@ class User extends Authenticatable
         return asset($this->avatar);
     }
 
+    public function setAvatarAttribute($path)
+    {
+        if (!starts_with($path, 'http')) {
+            $path = config('app.url') . "/storage/app/public/avatar/{$path}";
+        }
+        $this->attributes['avatar'] = $path;
+    }
+
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
@@ -50,6 +58,14 @@ class User extends Authenticatable
     public function topics()
     {
         return $this->hasMany(Topic::class);
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        if (!isset($value[59])) {
+            $value = bcrypt($value);
+        }
+        $this->attributes['password'] = $value;
     }
 
     public function notify($instance)
