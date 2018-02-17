@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('123456');
         $user->save();
         $user->assignRole('Maintainer');
-        $user = \App\Models\User::find(3);
+        $user = \App\Models\User::find(1);
         $user->assignRole('Founder');
 
     }
