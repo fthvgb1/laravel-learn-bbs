@@ -46,7 +46,9 @@ class User extends Authenticatable
      */
     public function getHeaderAttribute()
     {
-        return asset($this->avatar);
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        $header = "http://www.gravatar.com/avatar/$hash";
+        return $this->avatar ? asset($this->avatar) : $header;
     }
 
     public function getLastActiveATAttribute($value)
