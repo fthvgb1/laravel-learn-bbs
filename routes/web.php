@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@root')->name('home');
+Route::get('/', 'TopicsController@index')->name('home');
 
 Route::resource('users', 'UsersController', ['only' => ['update', 'show', 'edit']])
     ->middleware('auth');
