@@ -2,12 +2,18 @@
 
 namespace App\Models;
 
-use App\Models\Traits\ActiveUserHelper;
+use App\Traits\ActiveUserHelper;
+use App\Traits\LastActivedAtHelper;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * Class User
+ * @property string avatar
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
     use Notifiable {
@@ -15,6 +21,7 @@ class User extends Authenticatable
     }
     use HasRoles;
     use ActiveUserHelper;
+    use LastActivedAtHelper;
 
     /**
      * The attributes that are mass assignable.
@@ -34,11 +41,23 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * @return string
+     */
     public function getHeaderAttribute()
     {
         return asset($this->avatar);
     }
 
+    public function getLastActiveATAttribute($value)
+    {
+        return $this->getLastActivedAt($value);
+    }
+
+
+    /**
+     * @param $path
+     */
     public function setAvatarAttribute($path)
     {
         if (!starts_with($path, 'http')) {
@@ -47,21 +66,34 @@ class User extends Authenticatable
         $this->attributes['avatar'] = $path;
     }
 
+    /**
+     * @param $model
+     * @return bool
+     */
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function replies()
     {
         return $this->hasMany(Reply::class, 'user_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function topics()
     {
         return $this->hasMany(Topic::class);
     }
 
+    /**
+     * @param $value
+     */
     public function setPasswordAttribute($value)
     {
         if (!isset($value[59])) {
@@ -70,6 +102,9 @@ class User extends Authenticatable
         $this->attributes['password'] = $value;
     }
 
+    /**
+     * @param $instance
+     */
     public function notify($instance)
     {
         if ($this->id == Auth::id()) {

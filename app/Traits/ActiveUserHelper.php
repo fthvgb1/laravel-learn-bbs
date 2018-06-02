@@ -6,7 +6,7 @@
  * Time: 17:16
  */
 
-namespace App\Models\Traits;
+namespace App\Traits;
 
 
 use App\Models\Reply;
