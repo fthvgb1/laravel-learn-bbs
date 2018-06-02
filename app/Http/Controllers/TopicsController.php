@@ -76,17 +76,25 @@ class TopicsController extends Controller
 
     public function update(TopicRequest $request, Topic $topic)
     {
-        $this->authorize('update', $topic);
-        $topic->update($request->all());
+        try {
+            $this->authorize('update', $topic);
+            $topic->update($request->all());
+        } catch (\Exception $exception) {
+            echo $exception->getMessage();
+        }
+
 
         return redirect()->route('topics.show', [$topic->id, $topic->slug])->with('success', '编辑成功！');
     }
 
     public function destroy(Topic $topic)
     {
-        $this->authorize('destroy', $topic);
-        $topic->delete();
-
+        try {
+            $this->authorize('destroy', $topic);
+            $topic->delete();
+        } catch (\Exception $exception) {
+            echo $exception->getMessage();
+        }
         return redirect()->route('topics.index')->with('message', '删除成功.');
     }
 }

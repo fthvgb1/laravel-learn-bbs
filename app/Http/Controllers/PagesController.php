@@ -8,4 +8,12 @@ class PagesController extends Controller
     {
         return view('layouts.root');
     }
+
+    public function permissionDenied()
+    {
+        if (config('administrator.permission')) {
+            return redirect(url(config('administrator.uri')), 302);
+        }
+        return view('pages.permission_denied');
+    }
 }

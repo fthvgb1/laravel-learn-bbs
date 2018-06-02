@@ -4011,9 +4011,9 @@
                                 current = iteratee(value);
 
                             if (current != null && (computed === undefined
-                                        ? (current === current && !isSymbol(current))
-                                        : comparator(current, computed)
-                                )) {
+                                    ? (current === current && !isSymbol(current))
+                                    : comparator(current, computed)
+                            )) {
                                 var computed = current,
                                     result = value;
                             }
@@ -4308,15 +4308,15 @@
 
                                 value = (comparator || value !== 0) ? value : 0;
                                 if (!(seen
-                                            ? cacheHas(seen, computed)
-                                            : includes(result, computed, comparator)
-                                    )) {
+                                        ? cacheHas(seen, computed)
+                                        : includes(result, computed, comparator)
+                                )) {
                                     othIndex = othLength;
                                     while (--othIndex) {
                                         var cache = caches[othIndex];
                                         if (!(cache
-                                                ? cacheHas(cache, computed)
-                                                : includes(arrays[othIndex], computed, comparator))
+                                            ? cacheHas(cache, computed)
+                                            : includes(arrays[othIndex], computed, comparator))
                                         ) {
                                             continue outer;
                                         }
@@ -4514,8 +4514,8 @@
                         while (index--) {
                             var data = matchData[index];
                             if ((noCustomizer && data[2])
-                                    ? data[1] !== object[data[0]]
-                                    : !(data[0] in object)
+                                ? data[1] !== object[data[0]]
+                                : !(data[0] in object)
                             ) {
                                 return false;
                             }
@@ -4536,9 +4536,9 @@
                                     var result = customizer(objValue, srcValue, key, object, source, stack);
                                 }
                                 if (!(result === undefined
-                                            ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
-                                            : result
-                                    )) {
+                                        ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
+                                        : result
+                                )) {
                                     return false;
                                 }
                             }
@@ -6841,18 +6841,18 @@
                             // Recursively compare arrays (susceptible to call stack limits).
                             if (seen) {
                                 if (!arraySome(other, function (othValue, othIndex) {
-                                        if (!cacheHas(seen, othIndex) &&
-                                            (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
-                                            return seen.push(othIndex);
-                                        }
-                                    })) {
+                                    if (!cacheHas(seen, othIndex) &&
+                                        (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+                                        return seen.push(othIndex);
+                                    }
+                                })) {
                                     result = false;
                                     break;
                                 }
                             } else if (!(
-                                    arrValue === othValue ||
-                                    equalFunc(arrValue, othValue, bitmask, customizer, stack)
-                                )) {
+                                arrValue === othValue ||
+                                equalFunc(arrValue, othValue, bitmask, customizer, stack)
+                            )) {
                                 result = false;
                                 break;
                             }
@@ -6996,9 +6996,9 @@
                             }
                             // Recursively compare objects (susceptible to call stack limits).
                             if (!(compared === undefined
-                                        ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
-                                        : compared
-                                )) {
+                                    ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
+                                    : compared
+                            )) {
                                 result = false;
                                 break;
                             }
@@ -7492,8 +7492,8 @@
                         }
                         var type = typeof index;
                         if (type == 'number'
-                                ? (isArrayLike(object) && isIndex(index, object.length))
-                                : (type == 'string' && index in object)
+                            ? (isArrayLike(object) && isIndex(index, object.length))
+                            : (type == 'string' && index in object)
                         ) {
                             return eq(object[index], value);
                         }
@@ -15757,9 +15757,9 @@
                         }
                         string = toString(string);
                         if (string && (
-                                typeof separator == 'string' ||
-                                (separator != null && !isRegExp(separator))
-                            )) {
+                            typeof separator == 'string' ||
+                            (separator != null && !isRegExp(separator))
+                        )) {
                             separator = baseToString(separator);
                             if (!separator && hasUnicode(string)) {
                                 return castSlice(stringToArray(string), 0, limit);
@@ -18545,7 +18545,7 @@
 
                             // Recurse if we're merging plain objects or arrays
                             if (deep && copy && (jQuery.isPlainObject(copy) ||
-                                    (copyIsArray = Array.isArray(copy)))) {
+                                (copyIsArray = Array.isArray(copy)))) {
 
                                 if (copyIsArray) {
                                     copyIsArray = false;
@@ -19672,10 +19672,10 @@
                         }
 
                         if ((support.matchesSelector = rnative.test((matches = docElem.matches ||
-                                docElem.webkitMatchesSelector ||
-                                docElem.mozMatchesSelector ||
-                                docElem.oMatchesSelector ||
-                                docElem.msMatchesSelector)))) {
+                            docElem.webkitMatchesSelector ||
+                            docElem.mozMatchesSelector ||
+                            docElem.oMatchesSelector ||
+                            docElem.msMatchesSelector)))) {
 
                             assert(function (el) {
                                 // Check to see if it's possible to do matchesSelector
@@ -20133,8 +20133,8 @@
                                                     node = elem;
                                                     while ((node = node[dir])) {
                                                         if (ofType ?
-                                                                node.nodeName.toLowerCase() === name :
-                                                                node.nodeType === 1) {
+                                                            node.nodeName.toLowerCase() === name :
+                                                            node.nodeType === 1) {
 
                                                             return false;
                                                         }
@@ -20203,8 +20203,8 @@
                                                         (diff = nodeIndex = 0) || start.pop())) {
 
                                                         if ((ofType ?
-                                                                node.nodeName.toLowerCase() === name :
-                                                                node.nodeType === 1) &&
+                                                            node.nodeName.toLowerCase() === name :
+                                                            node.nodeType === 1) &&
                                                             ++diff) {
 
                                                             // Cache the index of each encountered element
@@ -20334,8 +20334,8 @@
                                     var elemLang;
                                     do {
                                         if ((elemLang = documentIsHTML ?
-                                                elem.lang :
-                                                elem.getAttribute("xml:lang") || elem.getAttribute("lang"))) {
+                                            elem.lang :
+                                            elem.getAttribute("xml:lang") || elem.getAttribute("lang"))) {
 
                                             elemLang = elemLang.toLowerCase();
                                             return elemLang === lang || elemLang.indexOf(lang + "-") === 0;
@@ -20526,7 +20526,7 @@
                             // Filters
                             for (type in Expr.filter) {
                                 if ((match = matchExpr[type].exec(soFar)) && (!preFilters[type] ||
-                                        (match = preFilters[type](match)))) {
+                                    (match = preFilters[type](match)))) {
                                     matched = match.shift();
                                     tokens.push({
                                         value: matched,
@@ -21012,9 +21012,9 @@
                                 if ((find = Expr.find[type])) {
                                     // Search, expanding context for leading sibling combinators
                                     if ((seed = find(
-                                            token.matches[0].replace(runescape, funescape),
-                                            rsibling.test(tokens[0].type) && testContext(context.parentNode) || context
-                                        ))) {
+                                        token.matches[0].replace(runescape, funescape),
+                                        rsibling.test(tokens[0].type) && testContext(context.parentNode) || context
+                                    ))) {
 
                                         // If seed is empty or no tokens remain, we can return early
                                         tokens.splice(i, 1);
@@ -21065,9 +21065,9 @@
 // Prevent attribute/property "interpolation"
 // https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
                     if (!assert(function (el) {
-                            el.innerHTML = "<a href='#'></a>";
-                            return el.firstChild.getAttribute("href") === "#";
-                        })) {
+                        el.innerHTML = "<a href='#'></a>";
+                        return el.firstChild.getAttribute("href") === "#";
+                    })) {
                         addHandle("type|href|height|width", function (elem, name, isXML) {
                             if (!isXML) {
                                 return elem.getAttribute(name, name.toLowerCase() === "type" ? 1 : 2);
@@ -21078,10 +21078,10 @@
 // Support: IE<9
 // Use defaultValue in place of getAttribute("value")
                     if (!support.attributes || !assert(function (el) {
-                            el.innerHTML = "<input/>";
-                            el.firstChild.setAttribute("value", "");
-                            return el.firstChild.getAttribute("value") === "";
-                        })) {
+                        el.innerHTML = "<input/>";
+                        el.firstChild.setAttribute("value", "");
+                        return el.firstChild.getAttribute("value") === "";
+                    })) {
                         addHandle("value", function (elem, name, isXML) {
                             if (!isXML && elem.nodeName.toLowerCase() === "input") {
                                 return elem.defaultValue;
@@ -21092,8 +21092,8 @@
 // Support: IE<9
 // Use getAttributeNode to fetch booleans when getAttribute lies
                     if (!assert(function (el) {
-                            return el.getAttribute("disabled") == null;
-                        })) {
+                        return el.getAttribute("disabled") == null;
+                    })) {
                         addHandle(booleans, function (elem, name, isXML) {
                             var val;
                             if (!isXML) {
@@ -21416,11 +21416,11 @@
 
                                 // Always skip document fragments
                                 if (cur.nodeType < 11 && (targets ?
-                                        targets.index(cur) > -1 :
+                                    targets.index(cur) > -1 :
 
-                                        // Don't pass non-elements to Sizzle
-                                        cur.nodeType === 1 &&
-                                        jQuery.find.matchesSelector(cur, selectors))) {
+                                    // Don't pass non-elements to Sizzle
+                                    cur.nodeType === 1 &&
+                                    jQuery.find.matchesSelector(cur, selectors))) {
 
                                     matched.push(cur);
                                     break;
@@ -26372,7 +26372,7 @@
                                 /* eslint-disable no-cond-assign */
 
                                 if (option.selected =
-                                        jQuery.inArray(jQuery.valHooks.option.get(option), values) > -1
+                                    jQuery.inArray(jQuery.valHooks.option.get(option), values) > -1
                                 ) {
                                     optionSet = true;
                                 }
@@ -26522,7 +26522,7 @@
                     if (!onlyHandlers && !event.isDefaultPrevented()) {
 
                         if ((!special._default ||
-                                special._default.apply(eventPath.pop(), data) === false) &&
+                            special._default.apply(eventPath.pop(), data) === false) &&
                             acceptData(elem)) {
 
                             // Call a native DOM method on the target with the same name as the event.
@@ -31980,8 +31980,10 @@
              * Make a map and return a function for checking if a key
              * is in that map.
              */
-            function makeMap(str,
-                             expectsLowerCase) {
+            function makeMap(
+                str,
+                expectsLowerCase
+            ) {
                 var map = Object.create(null);
                 var list = str.split(',');
                 for (var i = 0; i < list.length; i++) {
@@ -32614,14 +32616,16 @@
 
             /*  */
 
-            var VNode = function VNode(tag,
-                                       data,
-                                       children,
-                                       text,
-                                       elm,
-                                       context,
-                                       componentOptions,
-                                       asyncFactory) {
+            var VNode = function VNode(
+                tag,
+                data,
+                children,
+                text,
+                elm,
+                context,
+                componentOptions,
+                asyncFactory
+            ) {
                 this.tag = tag;
                 this.data = data;
                 this.children = children;
@@ -32869,11 +32873,13 @@
             /**
              * Define a reactive property on an Object.
              */
-            function defineReactive(obj,
-                                    key,
-                                    val,
-                                    customSetter,
-                                    shallow) {
+            function defineReactive(
+                obj,
+                key,
+                val,
+                customSetter,
+                shallow
+            ) {
                 var dep = new Dep();
 
                 var property = Object.getOwnPropertyDescriptor(obj, key);
@@ -33044,9 +33050,11 @@
             /**
              * Data
              */
-            function mergeDataOrFn(parentVal,
-                                   childVal,
-                                   vm) {
+            function mergeDataOrFn(
+                parentVal,
+                childVal,
+                vm
+            ) {
                 if (!vm) {
                     // in a Vue.extend merge, both should be functions
                     if (!childVal) {
@@ -33084,9 +33092,11 @@
                 }
             }
 
-            strats.data = function (parentVal,
-                                    childVal,
-                                    vm) {
+            strats.data = function (
+                parentVal,
+                childVal,
+                vm
+            ) {
                 if (!vm) {
                     if (childVal && typeof childVal !== 'function') {
                         "development" !== 'production' && warn(
@@ -33107,8 +33117,10 @@
             /**
              * Hooks and props are merged as arrays.
              */
-            function mergeHook(parentVal,
-                               childVal) {
+            function mergeHook(
+                parentVal,
+                childVal
+            ) {
                 return childVal
                     ? parentVal
                         ? parentVal.concat(childVal)
@@ -33129,10 +33141,12 @@
              * a three-way merge between constructor options, instance
              * options and parent options.
              */
-            function mergeAssets(parentVal,
-                                 childVal,
-                                 vm,
-                                 key) {
+            function mergeAssets(
+                parentVal,
+                childVal,
+                vm,
+                key
+            ) {
                 var res = Object.create(parentVal || null);
                 if (childVal) {
                     "development" !== 'production' && assertObjectType(key, childVal, vm);
@@ -33152,10 +33166,12 @@
              * Watchers hashes should not overwrite one
              * another, so we merge them as arrays.
              */
-            strats.watch = function (parentVal,
-                                     childVal,
-                                     vm,
-                                     key) {
+            strats.watch = function (
+                parentVal,
+                childVal,
+                vm,
+                key
+            ) {
                 // work around Firefox's Object.prototype.watch...
                 if (parentVal === nativeWatch) {
                     parentVal = undefined;
@@ -33194,10 +33210,12 @@
             strats.props =
                 strats.methods =
                     strats.inject =
-                        strats.computed = function (parentVal,
-                                                    childVal,
-                                                    vm,
-                                                    key) {
+                        strats.computed = function (
+                            parentVal,
+                            childVal,
+                            vm,
+                            key
+                        ) {
                             if (childVal && "development" !== 'production') {
                                 assertObjectType(key, childVal, vm);
                             }
@@ -33345,9 +33363,11 @@
              * Merge two option objects into a new one.
              * Core utility used in both instantiation and inheritance.
              */
-            function mergeOptions(parent,
-                                  child,
-                                  vm) {
+            function mergeOptions(
+                parent,
+                child,
+                vm
+            ) {
                 if (true) {
                     checkComponents(child);
                 }
@@ -33392,10 +33412,12 @@
              * This function is used because child instances need access
              * to assets defined in its ancestor chain.
              */
-            function resolveAsset(options,
-                                  type,
-                                  id,
-                                  warnMissing) {
+            function resolveAsset(
+                options,
+                type,
+                id,
+                warnMissing
+            ) {
                 /* istanbul ignore if */
                 if (typeof id !== 'string') {
                     return
@@ -33426,10 +33448,12 @@
 
             /*  */
 
-            function validateProp(key,
-                                  propOptions,
-                                  propsData,
-                                  vm) {
+            function validateProp(
+                key,
+                propOptions,
+                propsData,
+                vm
+            ) {
                 var prop = propOptions[key];
                 var absent = !hasOwn(propsData, key);
                 var value = propsData[key];
@@ -33495,11 +33519,13 @@
             /**
              * Assert whether a prop is valid.
              */
-            function assertProp(prop,
-                                name,
-                                value,
-                                vm,
-                                absent) {
+            function assertProp(
+                prop,
+                name,
+                value,
+                vm,
+                absent
+            ) {
                 if (prop.required && absent) {
                     warn(
                         'Missing required prop: "' + name + '"',
@@ -33675,10 +33701,10 @@
                     setImmediate(flushCallbacks);
                 };
             } else if (typeof MessageChannel !== 'undefined' && (
-                    isNative(MessageChannel) ||
-                    // PhantomJS
-                    MessageChannel.toString() === '[object MessageChannelConstructor]'
-                )) {
+                isNative(MessageChannel) ||
+                // PhantomJS
+                MessageChannel.toString() === '[object MessageChannelConstructor]'
+            )) {
                 var channel = new MessageChannel();
                 var port = channel.port2;
                 channel.port1.onmessage = flushCallbacks;
@@ -33935,11 +33961,13 @@
                 return invoker
             }
 
-            function updateListeners(on,
-                                     oldOn,
-                                     add,
-                                     remove$$1,
-                                     vm) {
+            function updateListeners(
+                on,
+                oldOn,
+                add,
+                remove$$1,
+                vm
+            ) {
                 var name, def, cur, old, event;
                 for (name in on) {
                     def = cur = on[name];
@@ -34006,9 +34034,11 @@
 
             /*  */
 
-            function extractPropsFromVNodeData(data,
-                                               Ctor,
-                                               tag) {
+            function extractPropsFromVNodeData(
+                data,
+                Ctor,
+                tag
+            ) {
                 // we are only extracting raw values here.
                 // validation and default values are handled in the child
                 // component itself.
@@ -34045,11 +34075,13 @@
                 return res
             }
 
-            function checkProp(res,
-                               hash,
-                               key,
-                               altKey,
-                               preserve) {
+            function checkProp(
+                res,
+                hash,
+                key,
+                altKey,
+                preserve
+            ) {
                 if (isDef(hash)) {
                     if (hasOwn(hash, key)) {
                         res[key] = hash[key];
@@ -34171,20 +34203,24 @@
                     : comp
             }
 
-            function createAsyncPlaceholder(factory,
-                                            data,
-                                            context,
-                                            children,
-                                            tag) {
+            function createAsyncPlaceholder(
+                factory,
+                data,
+                context,
+                children,
+                tag
+            ) {
                 var node = createEmptyVNode();
                 node.asyncFactory = factory;
                 node.asyncMeta = {data: data, context: context, children: children, tag: tag};
                 return node
             }
 
-            function resolveAsyncComponent(factory,
-                                           baseCtor,
-                                           context) {
+            function resolveAsyncComponent(
+                factory,
+                baseCtor,
+                context
+            ) {
                 if (isTrue(factory.error) && isDef(factory.errorComp)) {
                     return factory.errorComp
                 }
@@ -34329,9 +34365,11 @@
                 target.$off(event, fn);
             }
 
-            function updateComponentListeners(vm,
-                                              listeners,
-                                              oldListeners) {
+            function updateComponentListeners(
+                vm,
+                listeners,
+                oldListeners
+            ) {
                 target = vm;
                 updateListeners(listeners, oldListeners || {}, add, remove$1, vm);
                 target = undefined;
@@ -34447,8 +34485,10 @@
             /**
              * Runtime helper for resolving raw children VNodes into a slot object.
              */
-            function resolveSlots(children,
-                                  context) {
+            function resolveSlots(
+                children,
+                context
+            ) {
                 var slots = {};
                 if (!children) {
                     return slots
@@ -34489,8 +34529,10 @@
                 return (node.isComment && !node.asyncFactory) || node.text === ' '
             }
 
-            function resolveScopedSlots(fns, // see flow/vnode
-                                        res) {
+            function resolveScopedSlots(
+                fns, // see flow/vnode
+                res
+            ) {
                 res = res || {};
                 for (var i = 0; i < fns.length; i++) {
                     if (Array.isArray(fns[i])) {
@@ -34627,9 +34669,11 @@
                 };
             }
 
-            function mountComponent(vm,
-                                    el,
-                                    hydrating) {
+            function mountComponent(
+                vm,
+                el,
+                hydrating
+            ) {
                 vm.$el = el;
                 if (!vm.$options.render) {
                     vm.$options.render = createEmptyVNode;
@@ -34693,11 +34737,13 @@
                 return vm
             }
 
-            function updateChildComponent(vm,
-                                          propsData,
-                                          listeners,
-                                          parentVnode,
-                                          renderChildren) {
+            function updateChildComponent(
+                vm,
+                propsData,
+                listeners,
+                parentVnode,
+                renderChildren
+            ) {
                 if (true) {
                     isUpdatingChildComponent = true;
                 }
@@ -34966,11 +35012,13 @@
              * and fires callback when the expression value changes.
              * This is used for both the $watch() api and directives.
              */
-            var Watcher = function Watcher(vm,
-                                           expOrFn,
-                                           cb,
-                                           options,
-                                           isRenderWatcher) {
+            var Watcher = function Watcher(
+                vm,
+                expOrFn,
+                cb,
+                options,
+                isRenderWatcher
+            ) {
                 this.vm = vm;
                 if (isRenderWatcher) {
                     vm._watcher = this;
@@ -35352,9 +35400,11 @@
                 }
             }
 
-            function defineComputed(target,
-                                    key,
-                                    userDef) {
+            function defineComputed(
+                target,
+                key,
+                userDef
+            ) {
                 var shouldCache = !isServerRendering();
                 if (typeof userDef === 'function') {
                     sharedPropertyDefinition.get = shouldCache
@@ -35439,10 +35489,12 @@
                 }
             }
 
-            function createWatcher(vm,
-                                   keyOrFn,
-                                   handler,
-                                   options) {
+            function createWatcher(
+                vm,
+                keyOrFn,
+                handler,
+                options
+            ) {
                 if (isPlainObject(handler)) {
                     options = handler;
                     handler = handler.handler;
@@ -35483,9 +35535,11 @@
                 Vue.prototype.$set = set;
                 Vue.prototype.$delete = del;
 
-                Vue.prototype.$watch = function (expOrFn,
-                                                 cb,
-                                                 options) {
+                Vue.prototype.$watch = function (
+                    expOrFn,
+                    cb,
+                    options
+                ) {
                     var vm = this;
                     if (isPlainObject(cb)) {
                         return createWatcher(vm, expOrFn, cb, options)
@@ -35578,8 +35632,10 @@
             /**
              * Runtime helper for rendering v-for lists.
              */
-            function renderList(val,
-                                render) {
+            function renderList(
+                val,
+                render
+            ) {
                 var ret, i, l, keys, key;
                 if (Array.isArray(val) || typeof val === 'string') {
                     ret = new Array(val.length);
@@ -35610,10 +35666,12 @@
             /**
              * Runtime helper for rendering <slot>
              */
-            function renderSlot(name,
-                                fallback,
-                                props,
-                                bindObject) {
+            function renderSlot(
+                name,
+                fallback,
+                props,
+                bindObject
+            ) {
                 var scopedSlotFn = this.$scopedSlots[name];
                 var nodes;
                 if (scopedSlotFn) { // scoped slot
@@ -35668,10 +35726,12 @@
              * exposed as Vue.prototype._k
              * passing in eventKeyName as last argument separately for backwards compat
              */
-            function checkKeyCodes(eventKeyCode,
-                                   key,
-                                   builtInAlias,
-                                   eventKeyName) {
+            function checkKeyCodes(
+                eventKeyCode,
+                key,
+                builtInAlias,
+                eventKeyName
+            ) {
                 var keyCodes = config.keyCodes[key] || builtInAlias;
                 if (keyCodes) {
                     if (Array.isArray(keyCodes)) {
@@ -35689,11 +35749,13 @@
             /**
              * Runtime helper for merging v-bind="object" into a VNode's data.
              */
-            function bindObjectProps(data,
-                                     tag,
-                                     value,
-                                     asProp,
-                                     isSync) {
+            function bindObjectProps(
+                data,
+                tag,
+                value,
+                asProp,
+                isSync
+            ) {
                 if (value) {
                     if (!isObject(value)) {
                         "development" !== 'production' && warn(
@@ -35741,8 +35803,10 @@
             /**
              * Runtime helper for rendering static trees.
              */
-            function renderStatic(index,
-                                  isInFor) {
+            function renderStatic(
+                index,
+                isInFor
+            ) {
                 var cached = this._staticTrees || (this._staticTrees = []);
                 var tree = cached[index];
                 // if has already-rendered static tree and not inside v-for,
@@ -35766,16 +35830,20 @@
              * Runtime helper for v-once.
              * Effectively it means marking the node as static with a unique key.
              */
-            function markOnce(tree,
-                              index,
-                              key) {
+            function markOnce(
+                tree,
+                index,
+                key
+            ) {
                 markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
                 return tree
             }
 
-            function markStatic(tree,
-                                key,
-                                isOnce) {
+            function markStatic(
+                tree,
+                key,
+                isOnce
+            ) {
                 if (Array.isArray(tree)) {
                     for (var i = 0; i < tree.length; i++) {
                         if (tree[i] && typeof tree[i] !== 'string') {
@@ -35836,11 +35904,13 @@
 
             /*  */
 
-            function FunctionalRenderContext(data,
-                                             props,
-                                             children,
-                                             parent,
-                                             Ctor) {
+            function FunctionalRenderContext(
+                data,
+                props,
+                children,
+                parent,
+                Ctor
+            ) {
                 var options = Ctor.options;
                 this.data = data;
                 this.props = props;
@@ -35885,11 +35955,13 @@
 
             installRenderHelpers(FunctionalRenderContext.prototype);
 
-            function createFunctionalComponent(Ctor,
-                                               propsData,
-                                               data,
-                                               contextVm,
-                                               children) {
+            function createFunctionalComponent(
+                Ctor,
+                propsData,
+                data,
+                contextVm,
+                children
+            ) {
                 var options = Ctor.options;
                 var props = {};
                 var propOptions = options.props;
@@ -35956,10 +36028,12 @@
 
 // hooks to be invoked on component VNodes during patch
             var componentVNodeHooks = {
-                init: function init(vnode,
-                                    hydrating,
-                                    parentElm,
-                                    refElm) {
+                init: function init(
+                    vnode,
+                    hydrating,
+                    parentElm,
+                    refElm
+                ) {
                     if (!vnode.componentInstance || vnode.componentInstance._isDestroyed) {
                         var child = vnode.componentInstance = createComponentInstanceForVnode(
                             vnode,
@@ -36022,11 +36096,13 @@
 
             var hooksToMerge = Object.keys(componentVNodeHooks);
 
-            function createComponent(Ctor,
-                                     data,
-                                     context,
-                                     children,
-                                     tag) {
+            function createComponent(
+                Ctor,
+                data,
+                context,
+                children,
+                tag
+            ) {
                 if (isUndef(Ctor)) {
                     return
                 }
@@ -36123,10 +36199,12 @@
                 return vnode
             }
 
-            function createComponentInstanceForVnode(vnode, // we know it's MountedComponentVNode but flow doesn't
-                                                     parent, // activeInstance in lifecycle state
-                                                     parentElm,
-                                                     refElm) {
+            function createComponentInstanceForVnode(
+                vnode, // we know it's MountedComponentVNode but flow doesn't
+                parent, // activeInstance in lifecycle state
+                parentElm,
+                refElm
+            ) {
                 var options = {
                     _isComponent: true,
                     parent: parent,
@@ -36183,12 +36261,14 @@
 
 // wrapper function for providing a more flexible interface
 // without getting yelled at by flow
-            function createElement(context,
-                                   tag,
-                                   data,
-                                   children,
-                                   normalizationType,
-                                   alwaysNormalize) {
+            function createElement(
+                context,
+                tag,
+                data,
+                children,
+                normalizationType,
+                alwaysNormalize
+            ) {
                 if (Array.isArray(data) || isPrimitive(data)) {
                     normalizationType = children;
                     children = data;
@@ -36200,11 +36280,13 @@
                 return _createElement(context, tag, data, children, normalizationType)
             }
 
-            function _createElement(context,
-                                    tag,
-                                    data,
-                                    children,
-                                    normalizationType) {
+            function _createElement(
+                context,
+                tag,
+                data,
+                children,
+                normalizationType
+            ) {
                 if (isDef(data) && isDef((data).__ob__)) {
                     "development" !== 'production' && warn(
                         "Avoid using observed data object as vnode data: " + (JSON.stringify(data)) + "\n" +
@@ -36701,8 +36783,10 @@
                  * Create asset registration methods.
                  */
                 ASSET_TYPES.forEach(function (type) {
-                    Vue[type] = function (id,
-                                          definition) {
+                    Vue[type] = function (
+                        id,
+                        definition
+                    ) {
                         if (!definition) {
                             return this.options[type + 's'][id]
                         } else {
@@ -36757,10 +36841,12 @@
                 }
             }
 
-            function pruneCacheEntry(cache,
-                                     key,
-                                     keys,
-                                     current) {
+            function pruneCacheEntry(
+                cache,
+                key,
+                keys,
+                current
+            ) {
                 var cached$$1 = cache[key];
                 if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
                     cached$$1.componentInstance.$destroy();
@@ -36819,9 +36905,9 @@
                         var exclude = ref.exclude;
                         if (
                             // not included
-                        (include && (!name || !matches(include, name))) ||
-                        // excluded
-                        (exclude && name && matches(exclude, name))
+                            (include && (!name || !matches(include, name))) ||
+                            // excluded
+                            (exclude && name && matches(exclude, name))
                         ) {
                             return vnode
                         }
@@ -36992,8 +37078,10 @@
                 }
             }
 
-            function renderClass(staticClass,
-                                 dynamicClass) {
+            function renderClass(
+                staticClass,
+                dynamicClass
+            ) {
                 if (isDef(staticClass) || isDef(dynamicClass)) {
                     return concat(staticClass, stringifyClass(dynamicClass))
                 }
@@ -38110,8 +38198,10 @@
 
             var emptyModifiers = Object.create(null);
 
-            function normalizeDirectives$1(dirs,
-                                           vm) {
+            function normalizeDirectives$1(
+                dirs,
+                vm
+            ) {
                 var res = Object.create(null);
                 if (!dirs) {
                     // $flow-disable-line
@@ -38418,8 +38508,10 @@
                 console.error(("[Vue compiler]: " + msg));
             }
 
-            function pluckModuleFunction(modules,
-                                         key) {
+            function pluckModuleFunction(
+                modules,
+                key
+            ) {
                 return modules
                     ? modules.map(function (m) {
                         return m[key];
@@ -38445,12 +38537,14 @@
                 el.attrsList.push({name: name, value: value});
             }
 
-            function addDirective(el,
-                                  name,
-                                  rawName,
-                                  value,
-                                  arg,
-                                  modifiers) {
+            function addDirective(
+                el,
+                name,
+                rawName,
+                value,
+                arg,
+                modifiers
+            ) {
                 (el.directives || (el.directives = [])).push({
                     name: name,
                     rawName: rawName,
@@ -38461,12 +38555,14 @@
                 el.plain = false;
             }
 
-            function addHandler(el,
-                                name,
-                                value,
-                                modifiers,
-                                important,
-                                warn) {
+            function addHandler(
+                el,
+                name,
+                value,
+                modifiers,
+                important,
+                warn
+            ) {
                 modifiers = modifiers || emptyObject;
                 // warn prevent and passive modifier
                 /* istanbul ignore if */
@@ -38533,9 +38629,11 @@
                 el.plain = false;
             }
 
-            function getBindingAttr(el,
-                                    name,
-                                    getStatic) {
+            function getBindingAttr(
+                el,
+                name,
+                getStatic
+            ) {
                 var dynamicValue =
                     getAndRemoveAttr(el, ':' + name) ||
                     getAndRemoveAttr(el, 'v-bind:' + name);
@@ -38553,9 +38651,11 @@
 // doesn't get processed by processAttrs.
 // By default it does NOT remove it from the map (attrsMap) because the map is
 // needed during codegen.
-            function getAndRemoveAttr(el,
-                                      name,
-                                      removeFromMap) {
+            function getAndRemoveAttr(
+                el,
+                name,
+                removeFromMap
+            ) {
                 var val;
                 if ((val = el.attrsMap[name]) != null) {
                     var list = el.attrsList;
@@ -38577,9 +38677,11 @@
             /**
              * Cross-platform code generation for component v-model
              */
-            function genComponentModel(el,
-                                       value,
-                                       modifiers) {
+            function genComponentModel(
+                el,
+                value,
+                modifiers
+            ) {
                 var ref = modifiers || {};
                 var number = ref.number;
                 var trim = ref.trim;
@@ -38607,8 +38709,10 @@
             /**
              * Cross-platform codegen helper for generating v-model value assignment code.
              */
-            function genAssignmentCode(value,
-                                       assignment) {
+            function genAssignmentCode(
+                value,
+                assignment
+            ) {
                 var res = parseModel(value);
                 if (res.key === null) {
                     return (value + "=" + assignment)
@@ -38730,9 +38834,11 @@
             var RANGE_TOKEN = '__r';
             var CHECKBOX_RADIO_TOKEN = '__c';
 
-            function model(el,
-                           dir,
-                           _warn) {
+            function model(
+                el,
+                dir,
+                _warn
+            ) {
                 warn$1 = _warn;
                 var value = dir.value;
                 var modifiers = dir.modifiers;
@@ -38779,9 +38885,11 @@
                 return true
             }
 
-            function genCheckboxModel(el,
-                                      value,
-                                      modifiers) {
+            function genCheckboxModel(
+                el,
+                value,
+                modifiers
+            ) {
                 var number = modifiers && modifiers.number;
                 var valueBinding = getBindingAttr(el, 'value') || 'null';
                 var trueValueBinding = getBindingAttr(el, 'true-value') || 'true';
@@ -38808,9 +38916,11 @@
                 );
             }
 
-            function genRadioModel(el,
-                                   value,
-                                   modifiers) {
+            function genRadioModel(
+                el,
+                value,
+                modifiers
+            ) {
                 var number = modifiers && modifiers.number;
                 var valueBinding = getBindingAttr(el, 'value') || 'null';
                 valueBinding = number ? ("_n(" + valueBinding + ")") : valueBinding;
@@ -38818,9 +38928,11 @@
                 addHandler(el, 'change', genAssignmentCode(value, valueBinding), null, true);
             }
 
-            function genSelect(el,
-                               value,
-                               modifiers) {
+            function genSelect(
+                el,
+                value,
+                modifiers
+            ) {
                 var number = modifiers && modifiers.number;
                 var selectedVal = "Array.prototype.filter" +
                     ".call($event.target.options,function(o){return o.selected})" +
@@ -38833,9 +38945,11 @@
                 addHandler(el, 'change', code, null, true);
             }
 
-            function genDefaultModel(el,
-                                     value,
-                                     modifiers) {
+            function genDefaultModel(
+                el,
+                value,
+                modifiers
+            ) {
                 var type = el.attrsMap.type;
 
                 // warn if v-bind:value conflicts with v-model
@@ -38916,11 +39030,13 @@
                 }
             }
 
-            function add$1(event,
-                           handler,
-                           once$$1,
-                           capture,
-                           passive) {
+            function add$1(
+                event,
+                handler,
+                once$$1,
+                capture,
+                passive
+            ) {
                 handler = withMacroTask(handler);
                 if (once$$1) {
                     handler = createOnceHandler(handler, event, capture);
@@ -38934,10 +39050,12 @@
                 );
             }
 
-            function remove$2(event,
-                              handler,
-                              capture,
-                              _target) {
+            function remove$2(
+                event,
+                handler,
+                capture,
+                _target
+            ) {
                 (_target || target$1).removeEventListener(
                     event,
                     handler._withTask || handler,
@@ -39375,9 +39493,11 @@
                 removeClass(el, cls);
             }
 
-            function whenTransitionEnds(el,
-                                        expectedType,
-                                        cb) {
+            function whenTransitionEnds(
+                el,
+                expectedType,
+                cb
+            ) {
                 var ref = getTransitionInfo(el, expectedType);
                 var type = ref.type;
                 var timeout = ref.timeout;
@@ -39863,8 +39983,8 @@
                         var prevOptions = el._vOptions;
                         var curOptions = el._vOptions = [].map.call(el.options, getValue);
                         if (curOptions.some(function (o, i) {
-                                return !looseEqual(o, prevOptions[i]);
-                            })) {
+                            return !looseEqual(o, prevOptions[i]);
+                        })) {
                             // trigger change event if
                             // no matching option found for at least one value
                             var needReset = el.multiple
@@ -40007,11 +40127,13 @@
                     }
                 },
 
-                unbind: function unbind(el,
-                                        binding,
-                                        vnode,
-                                        oldVnode,
-                                        isDestroy) {
+                unbind: function unbind(
+                    el,
+                    binding,
+                    vnode,
+                    oldVnode,
+                    isDestroy
+                ) {
                     if (!isDestroy) {
                         el.style.display = el.__vOriginalDisplay;
                     }
@@ -40175,8 +40297,8 @@
                     // mark v-show
                     // so that the transition module can hand over the control to the directive
                     if (child.data.directives && child.data.directives.some(function (d) {
-                            return d.name === 'show';
-                        })) {
+                        return d.name === 'show';
+                    })) {
                         child.data.show = true;
                     }
 
@@ -40413,8 +40535,10 @@
             Vue$3.prototype.__patch__ = inBrowser ? patch : noop;
 
 // public mount method
-            Vue$3.prototype.$mount = function (el,
-                                               hydrating) {
+            Vue$3.prototype.$mount = function (
+                el,
+                hydrating
+            ) {
                 el = el && inBrowser ? query(el) : undefined;
                 return mountComponent(this, el, hydrating)
             };
@@ -40456,8 +40580,10 @@
             });
 
 
-            function parseText(text,
-                               delimiters) {
+            function parseText(
+                text,
+                delimiters
+            ) {
                 var tagRE = delimiters ? buildRegex(delimiters) : defaultTagRE;
                 if (!tagRE.test(text)) {
                     return
@@ -40958,9 +41084,11 @@
             var platformGetTagNamespace;
 
 
-            function createASTElement(tag,
-                                      attrs,
-                                      parent) {
+            function createASTElement(
+                tag,
+                attrs,
+                parent
+            ) {
                 return {
                     type: 1,
                     tag: tag,
@@ -40974,8 +41102,10 @@
             /**
              * Convert HTML string to AST.
              */
-            function parse(template,
-                           options) {
+            function parse(
+                template,
+                options
+            ) {
                 warn$2 = options.warn || baseWarn;
 
                 platformIsPreTag = options.isPreTag || no;
@@ -41454,8 +41584,8 @@
                                 }
                             }
                             if (isProp || (
-                                    !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
-                                )) {
+                                !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
+                            )) {
                                 addProp(el, name, value);
                             } else {
                                 addAttr(el, name, value);
@@ -41776,9 +41906,9 @@
                     // are not just static text. Otherwise the cost of hoisting out will
                     // outweigh the benefits and it's better off to just always render it fresh.
                     if (node.static && node.children.length && !(
-                            node.children.length === 1 &&
-                            node.children[0].type === 3
-                        )) {
+                        node.children.length === 1 &&
+                        node.children[0].type === 3
+                    )) {
                         node.staticRoot = true;
                         return
                     } else {
@@ -41865,9 +41995,11 @@
                 right: genGuard("'button' in $event && $event.button !== 2")
             };
 
-            function genHandlers(events,
-                                 isNative,
-                                 warn) {
+            function genHandlers(
+                events,
+                isNative,
+                warn
+            ) {
                 var res = isNative ? 'nativeOn:{' : 'on:{';
                 for (var name in events) {
                     res += "\"" + name + "\":" + (genHandler(name, events[name])) + ",";
@@ -41875,8 +42007,10 @@
                 return res.slice(0, -1) + '}'
             }
 
-            function genHandler(name,
-                                handler) {
+            function genHandler(
+                name,
+                handler
+            ) {
                 if (!handler) {
                     return 'function(){}'
                 }
@@ -42002,8 +42136,10 @@
             };
 
 
-            function generate(ast,
-                              options) {
+            function generate(
+                ast,
+                options
+            ) {
                 var state = new CodegenState(options);
                 var code = ast ? genElement(ast, state) : '_c("div")';
                 return {
@@ -42078,18 +42214,22 @@
                 }
             }
 
-            function genIf(el,
-                           state,
-                           altGen,
-                           altEmpty) {
+            function genIf(
+                el,
+                state,
+                altGen,
+                altEmpty
+            ) {
                 el.ifProcessed = true; // avoid recursion
                 return genIfConditions(el.ifConditions.slice(), state, altGen, altEmpty)
             }
 
-            function genIfConditions(conditions,
-                                     state,
-                                     altGen,
-                                     altEmpty) {
+            function genIfConditions(
+                conditions,
+                state,
+                altGen,
+                altEmpty
+            ) {
                 if (!conditions.length) {
                     return altEmpty || '_e()'
                 }
@@ -42111,10 +42251,12 @@
                 }
             }
 
-            function genFor(el,
-                            state,
-                            altGen,
-                            altHelper) {
+            function genFor(
+                el,
+                state,
+                altGen,
+                altHelper
+            ) {
                 var exp = el.for;
                 var alias = el.alias;
                 var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
@@ -42251,8 +42393,8 @@
             function genInlineTemplate(el, state) {
                 var ast = el.children[0];
                 if ("development" !== 'production' && (
-                        el.children.length !== 1 || ast.type !== 1
-                    )) {
+                    el.children.length !== 1 || ast.type !== 1
+                )) {
                     state.warn('Inline-template components must have exactly one child element.');
                 }
                 if (ast.type === 1) {
@@ -42263,16 +42405,20 @@
                 }
             }
 
-            function genScopedSlots(slots,
-                                    state) {
+            function genScopedSlots(
+                slots,
+                state
+            ) {
                 return ("scopedSlots:_u([" + (Object.keys(slots).map(function (key) {
                     return genScopedSlot(key, slots[key], state)
                 }).join(',')) + "])")
             }
 
-            function genScopedSlot(key,
-                                   el,
-                                   state) {
+            function genScopedSlot(
+                key,
+                el,
+                state
+            ) {
                 if (el.for && !el.forProcessed) {
                     return genForScopedSlot(key, el, state)
                 }
@@ -42285,9 +42431,11 @@
                 return ("{key:" + key + ",fn:" + fn + "}")
             }
 
-            function genForScopedSlot(key,
-                                      el,
-                                      state) {
+            function genForScopedSlot(
+                key,
+                el,
+                state
+            ) {
                 var exp = el.for;
                 var alias = el.alias;
                 var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
@@ -42299,11 +42447,13 @@
                     '})'
             }
 
-            function genChildren(el,
-                                 state,
-                                 checkSkip,
-                                 altGenElement,
-                                 altGenNode) {
+            function genChildren(
+                el,
+                state,
+                checkSkip,
+                altGenElement,
+                altGenNode
+            ) {
                 var children = el.children;
                 if (children.length) {
                     var el$1 = children[0];
@@ -42329,8 +42479,10 @@
 // 0: no normalization needed
 // 1: simple normalization needed (possible 1-level deep nested array)
 // 2: full normalization needed
-            function getNormalizationType(children,
-                                          maybeComponent) {
+            function getNormalizationType(
+                children,
+                maybeComponent
+            ) {
                 var res = 0;
                 for (var i = 0; i < children.length; i++) {
                     var el = children[i];
@@ -42400,9 +42552,11 @@
             }
 
 // componentName is el.component, take it as argument to shun flow's pessimistic refinement
-            function genComponent(componentName,
-                                  el,
-                                  state) {
+            function genComponent(
+                componentName,
+                el,
+                state
+            ) {
                 var children = el.inlineTemplate ? null : genChildren(el, state, true);
                 return ("_c(" + componentName + "," + (genData$2(el, state)) + (children ? ("," + children) : '') + ")")
             }
@@ -42498,10 +42652,12 @@
                 checkIdentifier(node.iterator2, 'v-for iterator', text, errors);
             }
 
-            function checkIdentifier(ident,
-                                     type,
-                                     text,
-                                     errors) {
+            function checkIdentifier(
+                ident,
+                type,
+                text,
+                errors
+            ) {
                 if (typeof ident === 'string') {
                     try {
                         new Function(("var " + ident + "=_"));
@@ -42545,9 +42701,11 @@
             function createCompileToFunctionFn(compile) {
                 var cache = Object.create(null);
 
-                return function compileToFunctions(template,
-                                                   options,
-                                                   vm) {
+                return function compileToFunctions(
+                    template,
+                    options,
+                    vm
+                ) {
                     options = extend({}, options);
                     var warn$$1 = options.warn || warn;
                     delete options.warn;
@@ -42634,8 +42792,10 @@
 
             function createCompilerCreator(baseCompile) {
                 return function createCompiler(baseOptions) {
-                    function compile(template,
-                                     options) {
+                    function compile(
+                        template,
+                        options
+                    ) {
                         var finalOptions = Object.create(baseOptions);
                         var errors = [];
                         var tips = [];
@@ -42685,8 +42845,10 @@
 // `createCompilerCreator` allows creating compilers that use alternative
 // parser/optimizer/codegen, e.g the SSR optimizing compiler.
 // Here we just export a default compiler using the default parts.
-            var createCompiler = createCompilerCreator(function baseCompile(template,
-                                                                            options) {
+            var createCompiler = createCompilerCreator(function baseCompile(
+                template,
+                options
+            ) {
                 var ast = parse(template.trim(), options);
                 if (options.optimize !== false) {
                     optimize(ast, options);
@@ -42728,8 +42890,10 @@
             });
 
             var mount = Vue$3.prototype.$mount;
-            Vue$3.prototype.$mount = function (el,
-                                               hydrating) {
+            Vue$3.prototype.$mount = function (
+                el,
+                hydrating
+            ) {
                 el = el && query(el);
 
                 /* istanbul ignore if */
@@ -43137,12 +43301,14 @@
 // This module is a runtime utility for cleaner component module output and will
 // be included in the final webpack user bundle.
 
-        module.exports = function normalizeComponent(rawScriptExports,
-                                                     compiledTemplate,
-                                                     functionalTemplate,
-                                                     injectStyles,
-                                                     scopeId,
-                                                     moduleIdentifier /* server only */) {
+        module.exports = function normalizeComponent(
+            rawScriptExports,
+            compiledTemplate,
+            functionalTemplate,
+            injectStyles,
+            scopeId,
+            moduleIdentifier /* server only */
+        ) {
             var esModule
             var scriptExports = rawScriptExports = rawScriptExports || {}
 
