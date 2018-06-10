@@ -76,7 +76,17 @@ $api->version('v1', [
         $api->patch('topics/{topic}', 'TopicsController@update')->name('api.topics.update');
         //删除话题
         $api->delete('topics/{topic}', 'TopicsController@destroy')->name('api.topics.destroy');
-
+        // 发布回复
+        $api->post('topics/{topic}/replies', 'RepliesController@store')
+            ->name('api.topics.replies.store');
+        //删除回复
+        $api->delete('replies/{reply}', 'RepliesController@destroy')->name('api.replies.destroy');
+        // 话题回复列表
+        $api->get('topics/{topic}/replies', 'RepliesController@index')
+            ->name('api.topics.replies.index');
+        //某个用户的回复列表
+        $api->get('users/{user}/replies', 'RepliesController@userIndex')
+            ->name('api.users.replies.index');
     });
 
 });

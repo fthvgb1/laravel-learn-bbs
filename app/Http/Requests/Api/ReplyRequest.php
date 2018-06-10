@@ -2,8 +2,12 @@
 
 namespace App\Http\Requests\Api;
 
-
-class AuthorizationRequest extends FormRequest
+/**
+ * Class ReplyRequest
+ * @property string content
+ * @package App\Http\Requests\Api
+ */
+class ReplyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +27,7 @@ class AuthorizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|string',
-            'password' => 'required|string|min:6',
+            'content' => 'required|min:2',
         ];
     }
 }
