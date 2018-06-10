@@ -15,6 +15,9 @@ use League\Fractal\TransformerAbstract;
 
 class TopicTransformer extends TransformerAbstract
 {
+
+    protected $availableIncludes = ['user', 'category'];
+
     public function transform(Topic $topic)
     {
         return [
@@ -31,5 +34,15 @@ class TopicTransformer extends TransformerAbstract
             'created_at' => $topic->created_at instanceof Carbon ? $topic->created_at->toDateTimeString() : $topic->created_at,
             'updated_at' => $topic->updated_at instanceof Carbon ? $topic->updated_at->toDateTimeString() : $topic->updated_at,
         ];
+    }
+
+    public function includeCategory(Topic $topic)
+    {
+        return $this->item($topic->category, new CategoryTransformer());
+    }
+
+    public function includeUser(Topic $topic)
+    {
+        return $this->item($topic->user, new UserTransformer());
     }
 }

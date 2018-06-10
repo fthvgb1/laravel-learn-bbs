@@ -15,7 +15,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
-    'middleware' => ['serializer:array', 'bindings'],
+    'middleware' => ['serializer:array', 'bindings'],//注意里的bindings中间件，使用这个才能使用隐式路由绑定
 ], function ($api) {
     $api->group([
         'middleware' => 'api.throttle',
@@ -51,6 +51,10 @@ $api->version('v1', [
         // 游客可以访问的接口
         $api->get('categories', 'CategoriesController@index')
             ->name('api.categories.index');
+        //话题列表
+        $api->get('topics', 'TopicsController@index')->name('api.topics.index');
+        //某用户的话题列表
+        $api->get('users/{user}/topics', 'TopicsController@userIndex')->name('api.users.topics.index');
     });
 
     // 需要 token 验证的接口
@@ -68,6 +72,9 @@ $api->version('v1', [
         $api->post('topics', 'TopicsController@store')->name('api.topics.store');
         //发布话题
         $api->patch('topics/{topic}', 'TopicsController@update')->name('api.topics.update');
+        //删除话题
+        $api->delete('topics/{topic}', 'TopicsController@destroy')->name('api.topics.destroy');
+
     });
 
 });
@@ -78,6 +85,4 @@ $api->version('v1', [
     });
 });*/
 
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
+

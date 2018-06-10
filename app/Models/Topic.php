@@ -16,6 +16,8 @@ namespace App\Models;
  * @property string excerpt
  * @property string created_at
  * @property string updated_at
+ * @property User user
+ * @property Category category
  * @package App\Models
  */
 class Topic extends Model
