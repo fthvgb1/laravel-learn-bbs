@@ -11,6 +11,7 @@ namespace App\Models;
  * @property int user_id
  * @property int topic_id
  * @property User user
+ * @property Topic topic
  * @package App\Models
  */
 class Reply extends Model

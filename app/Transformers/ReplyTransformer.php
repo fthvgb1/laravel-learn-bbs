@@ -15,7 +15,7 @@ use League\Fractal\TransformerAbstract;
 
 class ReplyTransformer extends TransformerAbstract
 {
-    protected $availableIncludes = ['user'];
+    protected $availableIncludes = ['user', 'topic'];
 
     public function transform(Reply $reply)
     {
@@ -27,6 +27,11 @@ class ReplyTransformer extends TransformerAbstract
             'created_at' => $reply->created_at instanceof Carbon ? $reply->created_at->toDateTimeString() : $reply->created_at,
             'updated_at' => $reply->updated_at instanceof Carbon ? $reply->updated_at->toDateTimeString() : $reply->updated_at,
         ];
+    }
+
+    public function includeTopic(Reply $reply)
+    {
+        return $this->item($reply->topic, new TopicTransformer());
     }
 
     public function includeUser(Reply $reply)
