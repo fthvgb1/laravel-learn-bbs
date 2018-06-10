@@ -2,6 +2,22 @@
 
 namespace App\Models;
 
+/**
+ * Class Topic
+ * @property int id
+ * @property string title
+ * @property int category_id
+ * @property int user_id
+ * @property int reply_count
+ * @property int view_count
+ * @property int last_reply_user_id
+ * @property string body
+ * @property string slug
+ * @property string excerpt
+ * @property string created_at
+ * @property string updated_at
+ * @package App\Models
+ */
 class Topic extends Model
 {
     protected $fillable = ['title', 'category_id', 'body', 'excerpt', 'slug'];
