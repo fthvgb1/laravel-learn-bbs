@@ -10,9 +10,13 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', ['namespace' => 'App\Http\Controllers\Api'], function ($api) {
+$api->version('v1', [
+    'namespace' => 'App\Http\Controllers\Api',
+    'middleware' => 'serializer:array',
+], function ($api) {
     $api->group([
         'middleware' => 'api.throttle',
         'limit' => config('api.rate_limits.sign.limit'),
@@ -45,7 +49,12 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers\Api'], function ($api)
             ->name('api.authorizations.destroy');
     });
 
-
+    // 需要 token 验证的接口
+    $api->group(['middleware' => 'api.auth'], function ($api) {
+        // 当前登录用户信息
+        $api->get('user', 'UsersController@me')
+            ->name('api.user.show');
+    });
 
 });
 
