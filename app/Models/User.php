@@ -7,12 +7,20 @@ use App\Traits\LastActivedAtHelper;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 /**
  * Class User
  * @property string avatar
+ * @property string name
+ * @property string email
+ * @property string introduction
+ * @property string phone
+ * @property string weixin_unionid
+ * @property string weixin_openid
+ * @property Role roles
  * @package App\Models
  */
 class User extends Authenticatable implements JWTSubject
