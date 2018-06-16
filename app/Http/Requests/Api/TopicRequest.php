@@ -16,7 +16,7 @@ class TopicRequest extends FormRequest
     public function rules()
     {
         switch ($this->method()) {
-            case 'POSt':
+            case 'POST':
                 return [
                     'title' => 'required|string',
                     'body' => 'required|string',
